@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "FxVYfaEhwDACL9eZLiXPs2uxz3lf+WYgLFTO7mKykTE2lZFiPQ5NrtoARkaqe4azOSdYW8FrC5MM3bhJwJ0hoA==",
+  "dgSpecHash": "vfULHSUl7hCMbmZ/O3UwZz+U3jPFT6V+yETtBJ4N40eA1DmauqJiboR4uRZY+ugU2w5/UuHHAACIxHILiKzc8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\djtas\\OneDrive\\Escritorio\\3ºDAW\\ENTORNOSERVIDOR\\PacoPinturas\\PacoPinturas\\PacoPinturas\\PacoPinturas.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\guill\\source\\repos\\PacoPinturas\\PacoPinturas\\PacoPinturas\\PacoPinturas.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\guill\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.30\\microsoft.netcore.app.host.win-x64.3.1.30.nupkg.sha512",
+    "C:\\Users\\guill\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\guill\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\guill\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
