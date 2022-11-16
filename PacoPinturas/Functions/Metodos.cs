@@ -53,7 +53,7 @@ namespace PacoPinturas.Functions
             nameSurname = Console.ReadLine();
             return new Usuario(username, password, nameSurname, phone);
         }
-
+        //Comprobar teléfono
         public static int checkPhone(string phone)
         {
             int numero = 0;
