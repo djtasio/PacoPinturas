@@ -7,6 +7,8 @@ namespace PacoPinturas.Models
     class Pedido
     {
         public string Id { get; set; }
+
+        //Date de hoy
         public DateTime Fecha {
             get {
                 DateTime thisDay = DateTime.Today;
@@ -16,6 +18,7 @@ namespace PacoPinturas.Models
             }
         }
 
+        //Lista de productos
         public List<Producto> producto;
 
         public bool Entrega24h;
