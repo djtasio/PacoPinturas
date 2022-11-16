@@ -84,12 +84,9 @@ namespace PacoPinturas.Functions
             } while (check);
             return new Usuario(username, password, nameSurname, phone);
         }
-<<<<<<< HEAD
 
         //Comprobar el phone number
-=======
         //Comprobar teléfono
->>>>>>> feature_productos
         public static int checkPhone(string phone)
         {
             int numero = 0;
