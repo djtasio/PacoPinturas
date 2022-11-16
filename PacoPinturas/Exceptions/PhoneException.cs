@@ -6,6 +6,7 @@ namespace PacoPinturas.Exceptions
 {
     internal class PhoneException : Exception
     {
+        //Excepción de teléfono
         public PhoneException(string message) : base(message) { }
     }
 }

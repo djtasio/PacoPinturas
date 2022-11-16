@@ -1,4 +1,5 @@
-﻿using PacoPinturas.Models;
+﻿using PacoPinturas.Exceptions;
+using PacoPinturas.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,7 @@ namespace PacoPinturas.Functions
 {
     internal static class Metodos
     {
+        //Comprobar que se ha introducido un número valido y si no preguntar hasta que se introduzca
         public static int CheckNumber(string message)
         {
             bool check = true;
@@ -29,15 +31,30 @@ namespace PacoPinturas.Functions
             return number;
         }
 
-        public static Usuario Registrarse()
+        //Registrar usuario
+        public static Usuario Registrarse(List<Usuario> users)
         {
             string username = "";
             string password = "";
             string password2 = "";
             string nameSurname = "";
+            bool check = true;
             int phone = 0;
-            Console.WriteLine("Introduce un username");
-            username = Console.ReadLine();
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Introduce un username");
+                    username = Console.ReadLine();
+                    checkUsername(users, username);
+                    check = false;
+                }
+                catch(UsernameAlreadyExistException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            } while (check);
+            check = true;
             do
             {
                 Console.WriteLine("Introduce una password");
@@ -51,9 +68,24 @@ namespace PacoPinturas.Functions
             } while (!String.Equals(password, password2));
             Console.WriteLine("Introduce tu name y surname");
             nameSurname = Console.ReadLine();
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Introduce tu phone");
+                    string tel = Console.ReadLine();
+                    phone = checkPhone(tel);
+                    check = false;
+                }
+                catch (PhoneException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            } while (check);
             return new Usuario(username, password, nameSurname, phone);
         }
 
+        //Comprobar el phone number
         public static int checkPhone(string phone)
         {
             int numero = 0;
@@ -61,15 +93,24 @@ namespace PacoPinturas.Functions
             {
                 if(phone.Length != 9)
                 {
-                    throw new ArgumentException("Phone incorrecto");
+                    throw new PhoneException("Phone incorrecto");
                 }
                 numero = Convert.ToInt32(phone);
             }
             catch (System.FormatException)
             {
-                throw new ArgumentException("Phone incorrecto");
+                throw new PhoneException("Phone incorrecto");
             }
             return numero;
+        }
+
+        public static void checkUsername(List<Usuario> users,string username)
+        {
+            var user = users.Find(user => user.User.Equals(username));
+            if(user != null)
+            {
+                throw new UsernameAlreadyExistException("El nombre de usuario que has introducido ya existe");
+            }
         }
     }
 }

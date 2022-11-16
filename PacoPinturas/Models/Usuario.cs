@@ -7,10 +7,10 @@ namespace PacoPinturas.Models
     internal class Usuario
     {
         public string Id { get; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string NameSurname { get; set; }
-        public int Phone { get; set; }
+        public string User { get; set; }
+        public string Contrasenia { get; set; }
+        public string NombreApellidos { get; set; }
+        public int Telefono { get; set; }
 
         //Listado de pedidos
 
@@ -26,10 +26,10 @@ namespace PacoPinturas.Models
         {
             Id = idNumberSeed.ToString();
             idNumberSeed++;
-            Username = username;
-            Password = password;
-            NameSurname = nameSurname;
-            Phone = phone;
+            User = username;
+            Contrasenia = password;
+            NombreApellidos = nameSurname;
+            Telefono = phone;
             //Listado de pedidos declarado
         }
     }

@@ -1,8 +1,10 @@
 ﻿using PacoPinturas.Functions;
 using PacoPinturas.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Transactions;
 
 namespace PacoPinturas
 {
@@ -10,27 +12,31 @@ namespace PacoPinturas
     {
         static void Main(string[] args)
         {
+            List<Usuario> users = new List<Usuario>();
 
             var initialMenu = new StringBuilder();
             initialMenu.AppendLine("Bienvenido a PACO EL PINTURAS");
             initialMenu.AppendLine("1- INICIAR SESÍON");
             initialMenu.AppendLine("2- REGISTRARSE");
 
-            int number = Metodos.CheckNumber(initialMenu.ToString());
-            switch (number)
+            do
             {
-                case 1:
-                    Console.WriteLine("Has iniciado sesión");
-                    break;
-                case 2:
-                    var usuario = Metodos.Registrarse();
-                    Console.WriteLine(usuario.ToString());
-                    break;
-                default:
-                    Console.WriteLine("Has introducido otro número");
-                    break;
-            }
-
+                int number = Metodos.CheckNumber(initialMenu.ToString());
+                switch (number)
+                {
+                    case 1:
+                        Console.WriteLine("Has iniciado sesión");
+                        break;
+                    case 2:
+                        var usuario = Metodos.Registrarse(users);
+                        Console.WriteLine("¡Usuario registrado con éxito!");
+                        users.Add(usuario);
+                        break;
+                    default:
+                        Console.WriteLine("Has introducido otro número");
+                        break;
+                }
+            } while (true);
         }
     }
 }
