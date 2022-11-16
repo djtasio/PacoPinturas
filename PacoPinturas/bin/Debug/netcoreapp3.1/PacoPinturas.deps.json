@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "PacoPinturas/1.0.0": {
+        "runtime": {
+          "PacoPinturas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PacoPinturas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

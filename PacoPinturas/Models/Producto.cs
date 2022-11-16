@@ -4,6 +4,7 @@ using System.Text;
 
 namespace PacoPinturas.Models
 {
+        //Variables con valores definidas
         public enum Calidad { Estandar,Premium}
         public enum Productos { Spray, Cubo, Rotulador}
     class Producto
@@ -42,6 +43,7 @@ namespace PacoPinturas.Models
                 return price * cantidad;
             }
         }
+        //Descripcion del producto 
         public string descripcion { 
             get {
 

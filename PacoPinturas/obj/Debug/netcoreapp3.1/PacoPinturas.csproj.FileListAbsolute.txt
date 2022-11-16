@@ -1,0 +1,14 @@
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\bin\Debug\netcoreapp3.1\PacoPinturas.exe
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\bin\Debug\netcoreapp3.1\PacoPinturas.deps.json
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\bin\Debug\netcoreapp3.1\PacoPinturas.runtimeconfig.json
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\bin\Debug\netcoreapp3.1\PacoPinturas.runtimeconfig.dev.json
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\bin\Debug\netcoreapp3.1\PacoPinturas.dll
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\bin\Debug\netcoreapp3.1\PacoPinturas.pdb
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\obj\Debug\netcoreapp3.1\PacoPinturas.csproj.AssemblyReference.cache
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\obj\Debug\netcoreapp3.1\PacoPinturas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\obj\Debug\netcoreapp3.1\PacoPinturas.AssemblyInfoInputs.cache
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\obj\Debug\netcoreapp3.1\PacoPinturas.AssemblyInfo.cs
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\obj\Debug\netcoreapp3.1\PacoPinturas.csproj.CoreCompileInputs.cache
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\obj\Debug\netcoreapp3.1\PacoPinturas.dll
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\obj\Debug\netcoreapp3.1\PacoPinturas.pdb
+C:\Users\guill\source\repos\PacoPinturas\PacoPinturas\PacoPinturas\obj\Debug\netcoreapp3.1\PacoPinturas.genruntimeconfig.cache
