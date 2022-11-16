@@ -6,8 +6,8 @@ namespace PacoPinturas.Models
 {
     class Pedido
     {
-        public string id { get; set; }
-        public DateTime fecha {
+        public string Id { get; set; }
+        public DateTime Fecha {
             get {
                 DateTime thisDay = DateTime.Today;
                 thisDay.ToString("g");
@@ -18,9 +18,9 @@ namespace PacoPinturas.Models
 
         public List<Producto> producto;
 
-        public bool entrega24h;
+        public bool Entrega24h;
 
-        public string direccion { get; set; }
+        public string Direccion { get; set; }
 
         private static int idNumberSeed = 1;
 
@@ -30,11 +30,11 @@ namespace PacoPinturas.Models
         }
         public Pedido(List<Producto> producto, Boolean entrega, string direccion)
         {
-            this.id= idNumberSeed.ToString();
+            this.Id= idNumberSeed.ToString();
             idNumberSeed++;
             this.producto = producto;
-            this.entrega24h = entrega;
-            this.direccion = direccion;
+            this.Entrega24h = entrega;
+            this.Direccion = direccion;
         }
     }
 }

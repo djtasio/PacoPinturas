@@ -9,10 +9,10 @@ namespace PacoPinturas.Models
         public enum Productos { Spray, Cubo, Rotulador}
     class Producto
     {
-        public string id { get; set; }
-        public string color { get; set; }
-        public int cantidad { get; set; }
-        public decimal precio {
+        public string Id { get; set; }
+        public string Color { get; set; }
+        public int Cantidad { get; set; }
+        public decimal Precio {
             get {
                 decimal price = 0;
 
@@ -40,11 +40,11 @@ namespace PacoPinturas.Models
                 {
                     price = 5.10m;
                 }
-                return price * cantidad;
+                return price * Cantidad;
             }
         }
         //Descripcion del producto 
-        public string descripcion { 
+        public string Descripcion { 
             get {
 
                 var description = new StringBuilder();
@@ -88,10 +88,10 @@ namespace PacoPinturas.Models
         }
 
         public Producto(string color, int cantidad, Calidad calidad , Productos productos){
-            this.id = idNumberSeed.ToString();
+            this.Id = idNumberSeed.ToString();
             idNumberSeed++;
-            this.color = color;
-            this.cantidad = cantidad;     
+            this.Color = color;
+            this.Cantidad = cantidad;     
             this.calidad = calidad;
             this.productos = productos;
            
