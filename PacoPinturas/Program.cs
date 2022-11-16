@@ -10,6 +10,7 @@ namespace PacoPinturas
     {
         static void Main(string[] args)
         {
+
             var initialMenu = new StringBuilder();
             initialMenu.AppendLine("Bienvenido a PACO EL PINTURAS");
             initialMenu.AppendLine("1- INICIAR SESÍON");
@@ -29,6 +30,7 @@ namespace PacoPinturas
                     Console.WriteLine("Has introducido otro número");
                     break;
             }
+
         }
     }
 }

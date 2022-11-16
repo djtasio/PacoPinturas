@@ -51,9 +51,25 @@ namespace PacoPinturas.Functions
             } while (!String.Equals(password, password2));
             Console.WriteLine("Introduce tu name y surname");
             nameSurname = Console.ReadLine();
-            Console.WriteLine("Introduce un username");
-            phone = Convert.ToInt32(Console.ReadLine());
             return new Usuario(username, password, nameSurname, phone);
+        }
+        //Comprobar teléfono
+        public static int checkPhone(string phone)
+        {
+            int numero = 0;
+            try
+            {
+                if(phone.Length != 9)
+                {
+                    throw new ArgumentException("Phone incorrecto");
+                }
+                numero = Convert.ToInt32(phone);
+            }
+            catch (System.FormatException)
+            {
+                throw new ArgumentException("Phone incorrecto");
+            }
+            return numero;
         }
     }
 }
