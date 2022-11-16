@@ -39,7 +39,7 @@ namespace PacoPinturas.Models
                 {
                     price = 5.10m;
                 }
-                return price;
+                return price * cantidad;
             }
         }
         public string descripcion { 
