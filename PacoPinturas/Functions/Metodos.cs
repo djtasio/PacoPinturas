@@ -51,8 +51,6 @@ namespace PacoPinturas.Functions
             } while (!String.Equals(password, password2));
             Console.WriteLine("Introduce tu name y surname");
             nameSurname = Console.ReadLine();
-            Console.WriteLine("Introduce un username");
-            phone = Convert.ToInt32(Console.ReadLine());
             return new Usuario(username, password, nameSurname, phone);
         }
 
