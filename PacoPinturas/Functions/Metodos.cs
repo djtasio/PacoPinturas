@@ -2,6 +2,7 @@
 using PacoPinturas.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Transactions;
@@ -69,13 +70,6 @@ namespace PacoPinturas.Functions
             return user;
         }
 
-        //Leer colores
-        public static string readColors(){
-        {
-                string fileName = $@"{Owner}_{Number}.json";
-                string jsonString = File.ReadAllText(fileName);
-                List<Transaction>? lista = JsonSerializer.Deserialize<List<Transaction>>(jsonString)!;
-                var report = new System.Text.StringBuilder();
-            }
+        //Leer 
     }
 }
