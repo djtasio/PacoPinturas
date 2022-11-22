@@ -16,6 +16,8 @@ namespace PacoPinturas
             List<Usuario> users = new List<Usuario>();
             Usuario usuario = new Usuario();
 
+            Console.WriteLine(Metodos.ReadColors());
+
             do
             {
                 int number = Metodos.CheckNumber();

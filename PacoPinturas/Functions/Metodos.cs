@@ -15,7 +15,7 @@ namespace PacoPinturas.Functions
         public static int CheckNumber()
         {
             bool check = true;
-            int number = 0; 
+            int number = 0;
             do
             {
                 try
@@ -41,7 +41,7 @@ namespace PacoPinturas.Functions
             int numero = 0;
             try
             {
-                if(phone.Length != 9)
+                if (phone.Length != 9)
                 {
                     throw new PhoneException("Phone incorrecto");
                 }
@@ -55,20 +55,32 @@ namespace PacoPinturas.Functions
         }
 
         //Comprobar si existe ese nombre de usuario
-        public static void CheckUsername(List<Usuario> users,string username)
+        public static void CheckUsername(List<Usuario> users, string username)
         {
             var user = users.Find(user => user.User.Equals(username));
-            if(user != null)
+            if (user != null)
             {
                 throw new UsernameAlreadyExistException("El nombre de usuario que has introducido ya existe");
             }
         }
         //Comprobar si el nombre de usuario y la contraseña pertenecen a un usuario
-        public static Usuario CheckLogin(List<Usuario> users,string username, string password)
+        public static Usuario CheckLogin(List<Usuario> users, string username, string password)
         {
             var user = users.Find(user => user.User.Equals(username) && user.Contrasenia.Equals(password));
             return user;
         }
-
+        public static string ReadColors()
+        {
+                string fileName = $@"../../../jsons/colores.json";
+                string jsonString = File.ReadAllText(fileName);
+                List<Color>? lista = JsonSerializer.Deserialize<List<Color>>(jsonString)!;
+                var colores = new System.Text.StringBuilder();
+            
+                foreach(var color in lista)
+            {
+                colores.AppendLine($"{color.Name} {color.Code}");
+            }
+            return colores.ToString();
+        }
     }
 }
