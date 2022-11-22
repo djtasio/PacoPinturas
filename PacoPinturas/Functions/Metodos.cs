@@ -71,6 +71,7 @@ namespace PacoPinturas.Functions
             return user;
         }
 
+<<<<<<< HEAD
         public static List<Color> GetColors()
         {
             string fileName = $@"../../../jsons/colores.json";
@@ -78,6 +79,8 @@ namespace PacoPinturas.Functions
             List<Color>? lista = JsonSerializer.Deserialize<List<Color>>(jsonString)!;
             return lista;
         }
+=======
+>>>>>>> 402b6fd185a9f03d833993f03d2647563a8353fe
         public static string ReadColors()
         {
                 List<Color>? lista = GetColors();
@@ -90,6 +93,7 @@ namespace PacoPinturas.Functions
             }
             return colores.ToString();
         }
+<<<<<<< HEAD
 
         public static string history(List<Pedido> pedidos) {
             var historial = new System.Text.StringBuilder();
@@ -104,5 +108,7 @@ namespace PacoPinturas.Functions
             return historial.ToString();
         }
 
+=======
+>>>>>>> 402b6fd185a9f03d833993f03d2647563a8353fe
     }
 }
