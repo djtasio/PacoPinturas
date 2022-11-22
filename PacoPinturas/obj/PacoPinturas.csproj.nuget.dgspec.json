@@ -50,8 +50,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-<<<<<<< HEAD
-=======
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
@@ -70,17 +68,12 @@
               "version": "[3.1.0, 3.1.0]"
             }
           ],
->>>>>>> 93b42dc02e84870fd2b60ced9d13c2ca0a52747e
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
-=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
->>>>>>> 93b42dc02e84870fd2b60ced9d13c2ca0a52747e
         }
       }
     }

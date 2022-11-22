@@ -82,7 +82,12 @@ namespace PacoPinturas.Models
 
         public Producto()
         {
-
+            this.id = idNumberSeed.ToString();
+            idNumberSeed++;
+            this.color = "";
+            this.cantidad = 0;
+            this.calidad = Calidad.Estandar;
+            this.productos = Productos.Spray;
         }
 
         public Producto(string color, int cantidad, Calidad calidad , Productos productos){
@@ -92,7 +97,6 @@ namespace PacoPinturas.Models
             this.cantidad = cantidad;     
             this.calidad = calidad;
             this.productos = productos;
-           
         }
 
     }

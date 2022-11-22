@@ -38,7 +38,6 @@ namespace PacoPinturas.Functions
             initialMenu.AppendLine("1- SPRAY");
             initialMenu.AppendLine("2- CUBO");
             initialMenu.AppendLine("3- ROTULADOR");
-            initialMenu.AppendLine("4- SALIR");
 
             return initialMenu.ToString();
         }
@@ -91,6 +90,8 @@ namespace PacoPinturas.Functions
         {
             var initialMenu = new StringBuilder();
             initialMenu.AppendLine("¿DESEA SEGUIR COMPRANDO?");
+            initialMenu.AppendLine("1- SÍ");
+            initialMenu.AppendLine("2- NO");
             return initialMenu.ToString();
         }
         //MENU ENTREGAR PEDIDO EN 24H
@@ -98,6 +99,8 @@ namespace PacoPinturas.Functions
         {
             var initialMenu = new StringBuilder();
             initialMenu.AppendLine("¿QUIERE QUE SU PEDIDO SE ENTREGUE EN 24H?:");
+            initialMenu.AppendLine("1- SÍ");
+            initialMenu.AppendLine("2- NO");
             return initialMenu.ToString();
         }
         //MENU INSERTAR DIRECCION DE ENTREGA

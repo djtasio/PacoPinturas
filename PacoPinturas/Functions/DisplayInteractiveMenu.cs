@@ -77,5 +77,127 @@ namespace PacoPinturas.Functions
             }
             return usuario;
         }
+
+        public static void InitialMenu(Usuario usuario)
+        {
+            int numero = Metodos.CheckNumber(DisplayMenu.Menu());
+            switch(numero) 
+            {
+                case 1:
+                    {
+                        usuario.Pedidos.Add(Order());
+                        Console.WriteLine(Metodos.history(usuario.Pedidos));
+                        break;
+                    }
+                case 2:
+                    {
+                        break;
+                    }
+                case 3:
+                    {
+                        break;
+                    }
+            }
+        }
+        public static Pedido Order()
+        {
+            Pedido pedido = new Pedido();
+            bool check = true;
+            do
+            {
+                int numero = Metodos.CheckNumber(DisplayMenu.Productos());
+                int numProducto = 0;
+                Producto producto = new Producto();
+                switch (numero)
+                {
+                    case 1:
+                        {
+                            producto.productos = Productos.Spray;
+                            numProducto = Metodos.CheckNumber(DisplayMenu.Spray());
+                            switch (numProducto)
+                            {
+                                case 1:
+                                    {
+                                        producto.calidad = Calidad.Estandar;
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        producto.calidad = Calidad.Premium;
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                    case 2:
+                        {
+                            producto.productos = Productos.Cubo;
+                            numProducto = Metodos.CheckNumber(DisplayMenu.Cubo());
+                            switch (numProducto)
+                            {
+                                case 1:
+                                    {
+                                        producto.calidad = Calidad.Estandar;
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        producto.calidad = Calidad.Premium;
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                    case 3:
+                        {
+                            producto.productos = Productos.Rotulador;
+                            numProducto = Metodos.CheckNumber(DisplayMenu.Rotulador());
+                            switch (numProducto)
+                            {
+                                case 1:
+                                    {
+                                        producto.calidad = Calidad.Estandar;
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        producto.calidad = Calidad.Premium;
+                                        break;
+                                    }
+                            }
+                            break;
+                        }
+                }
+                producto.cantidad = Metodos.CheckNumber(DisplayMenu.Cantidad());
+                Console.WriteLine(DisplayMenu.Color());
+                int numColor = Metodos.CheckNumber(Metodos.ReadColors());
+                //Controlar que color no sea null
+                var color = Metodos.GetColors().Find(color => color.Id.Equals(numColor));
+                int numSeguirComprando = Metodos.CheckNumber(DisplayMenu.SeguirComprando());
+                if (numSeguirComprando == 2)
+                {
+                    check = false;
+                }
+                pedido.productos.Add(producto);
+            } while (check);
+            int numEntrega = Metodos.CheckNumber(DisplayMenu.Entrega24H());
+            switch (numEntrega)
+            {
+                case 1:
+                    {
+                        pedido.Entrega24h = true;
+                        break;
+                    }
+                case 2:
+                    {
+                        pedido.Entrega24h = false;
+                        break;
+                    }
+            }
+            Console.WriteLine(DisplayMenu.Direccion());
+            pedido.Direccion = Console.ReadLine();
+            pedido.Fecha = DateTime.Today;
+            return pedido;
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace PacoPinturas.Models
         public string NombreApellidos { get; set; }
         public int Telefono { get; set; }
 
+        public List<Pedido> Pedidos { get; set; }
+
         //Listado de pedidos
 
         private static int idNumberSeed = 1;
@@ -20,6 +22,7 @@ namespace PacoPinturas.Models
         {
             Id = idNumberSeed.ToString();
             idNumberSeed++;
+            this.Pedidos = new List<Pedido>();
         }
 
         public Usuario(string username, string password, string nameSurname, int phone)
@@ -30,6 +33,7 @@ namespace PacoPinturas.Models
             Contrasenia = password;
             NombreApellidos = nameSurname;
             Telefono = phone;
+            Pedidos = new List<Pedido>();
             //Listado de pedidos declarado
         }
     }

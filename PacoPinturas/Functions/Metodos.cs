@@ -1,6 +1,7 @@
 ﻿using PacoPinturas.Exceptions;
 using PacoPinturas.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -12,7 +13,7 @@ namespace PacoPinturas.Functions
     internal static class Metodos
     {
         //Comprobar que se ha introducido un número valido y si no preguntar hasta que se introduzca
-        public static int CheckNumber()
+        public static int CheckNumber(string menu)
         {
             bool check = true;
             int number = 0;
@@ -20,7 +21,7 @@ namespace PacoPinturas.Functions
             {
                 try
                 {
-                    Console.WriteLine(DisplayMenu.Initial());
+                    Console.WriteLine(menu);
                     number = Convert.ToInt32(Console.ReadLine());
                     check = false;
                 }
@@ -69,23 +70,39 @@ namespace PacoPinturas.Functions
             var user = users.Find(user => user.User.Equals(username) && user.Contrasenia.Equals(password));
             return user;
         }
-<<<<<<< HEAD
+
+        public static List<Color> GetColors()
+        {
+            string fileName = $@"../../../jsons/colores.json";
+            string jsonString = File.ReadAllText(fileName);
+            List<Color>? lista = JsonSerializer.Deserialize<List<Color>>(jsonString)!;
+            return lista;
+        }
         public static string ReadColors()
         {
-                string fileName = $@"../../../jsons/colores.json";
-                string jsonString = File.ReadAllText(fileName);
-                List<Color>? lista = JsonSerializer.Deserialize<List<Color>>(jsonString)!;
+                List<Color>? lista = GetColors();
                 var colores = new System.Text.StringBuilder();
-            
+                int i = 0;
                 foreach(var color in lista)
             {
-                colores.AppendLine($"{color.Name} {color.Code}");
+                colores.AppendLine($"{i}- {color.Name} {color.Code}");
+                i++;
             }
             return colores.ToString();
         }
-=======
 
-        //Leer 
->>>>>>> 93b42dc02e84870fd2b60ced9d13c2ca0a52747e
+        public static string history(List<Pedido> pedidos) {
+            var historial = new System.Text.StringBuilder();
+            foreach (var pedido in pedidos)
+            {
+                historial.AppendLine($"FECHA: ${pedido.Fecha} DIRECCIÓN: {pedido.Direccion} PRODUCTOS:");
+                foreach(var producto in pedido.productos)
+                {
+                    historial.Append($"{producto.productos}");
+                }
+            }
+            return historial.ToString();
+        }
+
     }
 }
