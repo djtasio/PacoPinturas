@@ -69,6 +69,7 @@ namespace PacoPinturas.Functions
             var user = users.Find(user => user.User.Equals(username) && user.Contrasenia.Equals(password));
             return user;
         }
+<<<<<<< HEAD
         public static string ReadColors()
         {
                 string fileName = $@"../../../jsons/colores.json";
@@ -82,5 +83,9 @@ namespace PacoPinturas.Functions
             }
             return colores.ToString();
         }
+=======
+
+        //Leer 
+>>>>>>> 93b42dc02e84870fd2b60ced9d13c2ca0a52747e
     }
 }
