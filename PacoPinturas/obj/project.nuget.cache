@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "bzYpQjSinhrJC7qSGd9knWqjlSgZuO/pzdqIz7kSSUETmv8f0HmhEMtDRz/Zg+cZ3ESG7+VYa5S0CRzrudsHcw==",
   "success": true,
   "projectFilePath": "C:\\Users\\guill\\source\\repos\\PacoPinturas\\PacoPinturas\\PacoPinturas\\PacoPinturas.csproj",
@@ -9,5 +10,11 @@
     "C:\\Users\\guill\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
     "C:\\Users\\guill\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.31\\microsoft.netcore.app.host.win-x64.3.1.31.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "FxVYfaEhwDACL9eZLiXPs2uxz3lf+WYgLFTO7mKykTE2lZFiPQ5NrtoARkaqe4azOSdYW8FrC5MM3bhJwJ0hoA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\djtas\\OneDrive\\Escritorio\\3ºDAW\\ENTORNOSERVIDOR\\PacoPinturas\\PacoPinturas\\PacoPinturas\\PacoPinturas.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> Stashed changes
   "logs": []
 }

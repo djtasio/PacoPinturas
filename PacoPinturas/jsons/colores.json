@@ -1,0 +1,70 @@
+[
+  {
+    "Name": "Negro",
+    "Code": "#000"
+  },
+  {
+    "Name": "Blanco",
+    "Code": "#FFF"
+  },
+  {
+    "Name": "Verde",
+    "Code": "#58D68D"
+  },
+  {
+    "Name": "Rojo",
+    "Code": "#CB4335"
+  },
+  {
+    "Name": "Azul",
+    "Code": "#3498DB"
+  },
+  {
+    "Name": "Amarillo",
+    "Code": "#F1C40F"
+  },
+  {
+    "Name": "Morado",
+    "Code": "#8E44AD"
+  },
+  {
+    "Name": "Rosa",
+    "Code": "#FFA07A"
+  },
+  {
+    "Name": "Naranja",
+    "Code": "#F5B041"
+  },
+  {
+    "Name": "Gris",
+    "Code": "#707B7C"
+  },
+  {
+    "Name": "Salmón",
+    "Code": "#F28773"
+  },
+  {
+    "Name": "Lima",
+    "Code": "#99FF33"
+  },
+  {
+    "Name": "Magenta",
+    "Code": "#FF00FF"
+  },
+  {
+    "Name": "Cían",
+    "Code": "#00FFFF"
+  },
+  {
+    "Name": "Sepia",
+    "Code": "#382C1E"
+  },
+  {
+    "Name": "Mate",
+    "Code": "#C7BDA7"
+  },
+  {
+    "Name": "Acero",
+    "Code": "#231A24"
+  }
+]

@@ -2,7 +2,10 @@
 using PacoPinturas.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Text.Json;
+using System.Transactions;
 
 namespace PacoPinturas.Functions
 {
@@ -66,5 +69,6 @@ namespace PacoPinturas.Functions
             var user = users.Find(user => user.User.Equals(username) && user.Contrasenia.Equals(password));
             return user;
         }
+
     }
 }
