@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace PacoPinturas.Models
@@ -20,6 +21,16 @@ namespace PacoPinturas.Models
 
         public string Direccion { get; set; }
 
+        public decimal precio { get {
+                decimal p = 0m;
+                foreach (var producto in this.productos)
+                {
+                    p += producto.precio;
+                }
+                return p;
+            }
+        }
+
         private static int idNumberSeed = 1;
         public Pedido()
         {
@@ -28,7 +39,7 @@ namespace PacoPinturas.Models
             //this.Fecha = DateTime.Today;
             this.productos = new List<Producto>();
         }
-        public Pedido(List<Producto> productos, Boolean entrega, string direccion)
+        /*public Pedido(List<Producto> productos, Boolean entrega, string direccion, decimal precio)
         {
             this.Id = idNumberSeed.ToString();
             idNumberSeed++;
@@ -36,6 +47,6 @@ namespace PacoPinturas.Models
             this.Entrega24h = entrega;
             this.Direccion = direccion;
             this.Fecha = DateTime.Today;
-        }
+        }*/
     }
 }

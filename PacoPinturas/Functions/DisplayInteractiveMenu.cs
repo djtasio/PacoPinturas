@@ -91,10 +91,12 @@ namespace PacoPinturas.Functions
                     }
                 case 2:
                     {
+                        Console.WriteLine(Metodos.history(usuario.Pedidos));
                         break;
                     }
                 case 3:
                     {
+                        Metodos.ReadColors();
                         break;
                     }
             }
@@ -172,7 +174,8 @@ namespace PacoPinturas.Functions
                 Console.WriteLine(DisplayMenu.Color());
                 int numColor = Metodos.CheckNumber(Metodos.ReadColors());
                 //Controlar que color no sea null
-                var color = Metodos.GetColors().Find(color => color.Id.Equals(numColor));
+                var color = Metodos.GetColors().Find(color => color.Id.Equals(numColor.ToString()));
+                producto.color = color.Code;
                 int numSeguirComprando = Metodos.CheckNumber(DisplayMenu.SeguirComprando());
                 if (numSeguirComprando == 2)
                 {
