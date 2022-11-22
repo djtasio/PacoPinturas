@@ -33,7 +33,7 @@ namespace PacoPinturas.Functions
 
         //Comprobar el phone number
         //Comprobar teléfono
-        public static int checkPhone(string phone)
+        public static int CheckPhone(string phone)
         {
             int numero = 0;
             try
@@ -52,7 +52,7 @@ namespace PacoPinturas.Functions
         }
 
         //Comprobar si existe ese nombre de usuario
-        public static void checkUsername(List<Usuario> users,string username)
+        public static void CheckUsername(List<Usuario> users,string username)
         {
             var user = users.Find(user => user.User.Equals(username));
             if(user != null)
@@ -61,7 +61,7 @@ namespace PacoPinturas.Functions
             }
         }
         //Comprobar si el nombre de usuario y la contraseña pertenecen a un usuario
-        public static Usuario checkLogin(List<Usuario> users,string username, string password)
+        public static Usuario CheckLogin(List<Usuario> users,string username, string password)
         {
             var user = users.Find(user => user.User.Equals(username) && user.Contrasenia.Equals(password));
             return user;

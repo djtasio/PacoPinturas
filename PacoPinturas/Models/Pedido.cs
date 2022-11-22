@@ -28,7 +28,6 @@ namespace PacoPinturas.Models
         public string Direccion { get; set; }
 
         private static int idNumberSeed = 1;
-
         public Pedido()
         {
 

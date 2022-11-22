@@ -23,7 +23,7 @@ namespace PacoPinturas.Functions
                 {
                     Console.WriteLine("Introduce un username");
                     username = Console.ReadLine();
-                    Metodos.checkUsername(users, username);
+                    Metodos.CheckUsername(users, username);
                     check = false;
                 }
                 catch (UsernameAlreadyExistException e)
@@ -51,7 +51,7 @@ namespace PacoPinturas.Functions
                 {
                     Console.WriteLine("Introduce tu phone");
                     string tel = Console.ReadLine();
-                    phone = Metodos.checkPhone(tel);
+                    phone = Metodos.CheckPhone(tel);
                     check = false;
                 }
                 catch (PhoneException e)
@@ -70,7 +70,7 @@ namespace PacoPinturas.Functions
             Console.WriteLine("Introduce la password");
             string password = Console.ReadLine();
 
-            var usuario = Metodos.checkLogin(usuarios, username, password);
+            var usuario = Metodos.CheckLogin(usuarios, username, password);
             if (usuario == null)
             {
                 throw (new IncorrectUserException("Incorrect username or password"));
