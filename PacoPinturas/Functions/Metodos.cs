@@ -12,7 +12,7 @@ namespace PacoPinturas.Functions
         public static int CheckNumber(string message)
         {
             bool check = true;
-            int number = 0;
+            int number = 0; //
             do
             {
                 try
