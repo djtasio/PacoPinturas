@@ -91,7 +91,7 @@ namespace PacoPinturas.Models
             this.Id = idNumberSeed.ToString();
             idNumberSeed++;
             this.Color = color;
-            this.Cantidad = cantidad;     
+            this.Cantidad = cantidad;    
             this.calidad = calidad;
             this.productos = productos;
            
