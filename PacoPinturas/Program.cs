@@ -1,4 +1,5 @@
-﻿using PacoPinturas.Functions;
+﻿using PacoPinturas.Exceptions;
+using PacoPinturas.Functions;
 using PacoPinturas.Models;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,26 @@ namespace PacoPinturas
         static void Main(string[] args)
         {
             List<Usuario> users = new List<Usuario>();
+            Usuario usuario = new Usuario();
 
             do
             {
-                int number = Metodos.CheckNumber(initialMenu.ToString());
+                int number = Metodos.CheckNumber();
                 switch (number)
                 {
                     case 1:
-                        Console.WriteLine("Has iniciado sesión");
+                        try
+                        {
+                            usuario = DisplayInteractiveMenu.login(users);
+                            Console.WriteLine($"Bienvenido {usuario.NombreApellidos}");
+                        }
+                        catch(IncorrectUserException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                         break;
                     case 2:
-                        var usuario = Metodos.Registrarse(users);
+                        usuario = DisplayInteractiveMenu.Registrarse(users);
                         Console.WriteLine("¡Usuario registrado con éxito!");
                         users.Add(usuario);
                         break;

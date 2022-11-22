@@ -1,4 +1,5 @@
-﻿using PacoPinturas.Models;
+﻿using PacoPinturas.Exceptions;
+using PacoPinturas.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,7 @@ namespace PacoPinturas.Functions
 {
     internal static class DisplayMenu
     {
+        //Menu inicial
         public static string Initial()
         {
             var initialMenu = new StringBuilder();
