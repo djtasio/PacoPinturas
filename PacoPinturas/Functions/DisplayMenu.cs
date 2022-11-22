@@ -1,10 +1,20 @@
-﻿using System;
+﻿using PacoPinturas.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace PacoPinturas.Functions
 {
-    internal class DisplayMenu
+    internal static class DisplayMenu
     {
+        public static string Initial()
+        {
+            var initialMenu = new StringBuilder();
+            initialMenu.AppendLine("Bienvenido a PACO EL PINTURAS");
+            initialMenu.AppendLine("1- INICIAR SESÍON");
+            initialMenu.AppendLine("2- REGISTRARSE");
+
+            return initialMenu.ToString();
+        }
     }
 }

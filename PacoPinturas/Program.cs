@@ -14,11 +14,6 @@ namespace PacoPinturas
         {
             List<Usuario> users = new List<Usuario>();
 
-            var initialMenu = new StringBuilder();
-            initialMenu.AppendLine("Bienvenido a PACO EL PINTURAS");
-            initialMenu.AppendLine("1- INICIAR SESÍON");
-            initialMenu.AppendLine("2- REGISTRARSE");
-
             do
             {
                 int number = Metodos.CheckNumber(initialMenu.ToString());

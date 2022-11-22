@@ -9,15 +9,15 @@ namespace PacoPinturas.Functions
     internal static class Metodos
     {
         //Comprobar que se ha introducido un número valido y si no preguntar hasta que se introduzca
-        public static int CheckNumber(string message)
+        public static int CheckNumber()
         {
             bool check = true;
-            int number = 0; //
+            int number = 0; 
             do
             {
                 try
                 {
-                    Console.WriteLine(message);
+                    Console.WriteLine(DisplayMenu.Initial());
                     number = Convert.ToInt32(Console.ReadLine());
                     check = false;
                 }
