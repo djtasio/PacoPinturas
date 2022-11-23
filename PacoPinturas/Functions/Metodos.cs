@@ -35,6 +35,28 @@ namespace PacoPinturas.Functions
             return number;
         }
 
+        public static string CheckString(string messge)
+        {
+            bool check = true;
+            string characters = "";
+            do
+            {
+                try
+                {
+                    Console.WriteLine(messge);
+                    characters = Console.ReadLine().Trim();
+                    CheckEmptyCharacter(characters);
+                    check = false;
+                }
+                catch(EmptyCharacterExceptions e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+            } while (check);
+            return characters;
+        }
+
         //Comprobar el phone number
         //Comprobar teléfono
         public static int CheckPhone(string phone)
@@ -56,13 +78,14 @@ namespace PacoPinturas.Functions
         }
 
         //Comprobar si existe ese nombre de usuario
-        public static void CheckUsername(List<Usuario> users, string username)
+        public static bool CheckUsername(List<Usuario> users, string username)
         {
             var user = users.Find(user => user.User.Equals(username));
             if (user != null)
             {
                 throw new UsernameAlreadyExistException("El nombre de usuario que has introducido ya existe");
             }
+            return true;
         }
         //Comprobar si el nombre de usuario y la contraseña pertenecen a un usuario
         public static Usuario CheckLogin(List<Usuario> users, string username, string password)
@@ -91,7 +114,7 @@ namespace PacoPinturas.Functions
             return colores.ToString();
         }
 
-        public static string history(List<Pedido> pedidos) {
+        public static string History(List<Pedido> pedidos) {
             var historial = new System.Text.StringBuilder();
             foreach (var pedido in pedidos)
             {
@@ -108,6 +131,24 @@ namespace PacoPinturas.Functions
             }
             historial.AppendLine($"--------------------------------------");
             return historial.ToString();
+        }
+
+        public static bool CheckEmptyCharacter(string text)
+        {
+            if (text.Length == 0)
+            {
+                throw new EmptyCharacterExceptions("No puedes dejar campos vacíos");
+            }
+            return true;
+        }
+
+        public static List<Pedido> FetchFilter(List<Pedido> pedidos, String fecha)
+        {
+            //thisDate1.ToString("MM/dd/yyyy") + ".");
+            var pedidosFiltro = pedidos.flatMap(pedido => 
+                pedido.Fecha.ToString("dd/MM/yyyy").Equals(fecha)
+                );
+            return pedidosFiltro;
         }
     }
 }

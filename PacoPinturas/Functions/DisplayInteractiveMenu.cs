@@ -21,8 +21,7 @@ namespace PacoPinturas.Functions
             {
                 try
                 {
-                    Console.WriteLine("Introduce un username");
-                    username = Console.ReadLine();
+                    username = Metodos.CheckString("Introduce un username");
                     Metodos.CheckUsername(users, username);
                     check = false;
                 }
@@ -34,17 +33,14 @@ namespace PacoPinturas.Functions
             check = true;
             do
             {
-                Console.WriteLine("Introduce una password");
-                password = Console.ReadLine();
-                Console.WriteLine("Repite tu password");
-                password2 = Console.ReadLine();
+                password = Metodos.CheckString("Introduce una password");
+                password2 = Metodos.CheckString("Repite tu password");
                 if (!String.Equals(password, password2))
                 {
                     Console.WriteLine("Las password no coinciden");
                 }
             } while (!String.Equals(password, password2));
-            Console.WriteLine("Introduce tu name y surname");
-            nameSurname = Console.ReadLine();
+            nameSurname = Metodos.CheckString("Introduce tu name y surname");
             do
             {
                 try
@@ -65,15 +61,13 @@ namespace PacoPinturas.Functions
         //Menu login
         public static Usuario login(List<Usuario> usuarios)
         {
-            Console.WriteLine("Introduce el username");
-            string username = Console.ReadLine();
-            Console.WriteLine("Introduce la password");
-            string password = Console.ReadLine();
+            string username = Metodos.CheckString("Introduce el username");
+            string password = Metodos.CheckString("Introduce tu password");
 
             var usuario = Metodos.CheckLogin(usuarios, username, password);
             if (usuario == null)
             {
-                throw (new IncorrectUserException("Incorrect username or password"));
+                throw new IncorrectUserException("Incorrect username or password");
             }
             return usuario;
         }
@@ -86,12 +80,12 @@ namespace PacoPinturas.Functions
                 case 1:
                     {
                         usuario.Pedidos.Add(Order());
-                        Console.WriteLine(Metodos.history(usuario.Pedidos));
+                        Console.WriteLine(Metodos.History(usuario.Pedidos));
                         break;
                     }
                 case 2:
                     {
-                        Console.WriteLine(Metodos.history(usuario.Pedidos));
+                        Console.WriteLine(Metodos.History(usuario.Pedidos));
                         break;
                     }
                 case 3:
@@ -197,8 +191,7 @@ namespace PacoPinturas.Functions
                         break;
                     }
             }
-            Console.WriteLine(DisplayMenu.Direccion());
-            pedido.Direccion = Console.ReadLine();
+            pedido.Direccion = Metodos.CheckString(DisplayMenu.Direccion());
             pedido.Fecha = DateTime.Today;
             return pedido;
         }
