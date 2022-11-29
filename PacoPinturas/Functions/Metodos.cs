@@ -12,8 +12,9 @@ namespace PacoPinturas.Functions
 {
     internal static class Metodos
     {
+        public static Log Olog = new Log(@"../../../Log");
         //Comprobar que se ha introducido un número valido y si no preguntar hasta que se introduzca
-        public static int CheckNumber(string menu)
+        public static int CheckNumber(string menu, int range)
         {
             bool check = true;
             int number = 0;
@@ -23,12 +24,20 @@ namespace PacoPinturas.Functions
                 {
                     Console.WriteLine(menu);
                     number = Convert.ToInt32(Console.ReadLine());
-                    check = false;
+                    if(CheckRange(number, range))
+                    {
+                        check = false;
+                    }
                 }
-                catch (System.FormatException e)
+                catch (FormatException e)
                 {
                     Console.WriteLine($"Número incorrecto {e.Message}");
-                    //Log de errores
+                    Olog.Add(e.Message);
+                }
+                catch(OutOfRangeException e)
+                {
+                    Console.WriteLine(e.Message);
+                    Olog.Add(e.Message);
                 }
 
             } while (check);
@@ -51,6 +60,7 @@ namespace PacoPinturas.Functions
                 catch(EmptyCharacterExceptions e)
                 {
                     Console.WriteLine(e.Message);
+                    Olog.Add("Campo vacío");
                 }
 
             } while (check);
@@ -105,7 +115,7 @@ namespace PacoPinturas.Functions
         {
                 List<Color>? lista = GetColors();
                 var colores = new System.Text.StringBuilder();
-                int i = 0;
+                int i = 1;
                 foreach(var color in lista)
             {
                 colores.AppendLine($"{i}- {color.Name} {color.Code}");
@@ -119,14 +129,14 @@ namespace PacoPinturas.Functions
             foreach (var pedido in pedidos)
             {
                 historial.AppendLine($"--------------------------------------");
-                historial.AppendLine($"PRECIO: {pedido.precio}€");
+                historial.AppendLine($"PRECIO: {pedido.precio}$");
                 historial.AppendLine($"FECHA: {pedido.Fecha}");
                 historial.AppendLine($"DIRECCIÓN: {pedido.Direccion}");
                 historial.AppendLine("PRODUCTOS:");
                 foreach (var producto in pedido.productos)
                 {
-                    historial.AppendLine($"x{producto.cantidad} {producto.productos}" +
-                        $"{producto.calidad} {producto.color} {producto.precio}€");
+                    historial.AppendLine($"x{producto.cantidad} {producto.productos} " +
+                        $"{producto.calidad} {producto.color.Name} {producto.precio}$");
                 }
             }
             historial.AppendLine($"--------------------------------------");
@@ -142,13 +152,22 @@ namespace PacoPinturas.Functions
             return true;
         }
 
-        public static List<Pedido> FetchFilter(List<Pedido> pedidos, String fecha)
+        public static bool CheckRange(int num,int range)
+        {
+            if(num<1 || num > range)
+            {
+                throw new OutOfRangeException("Numero fuera de rango");
+            }
+            return true;
+        }
+
+        /*public static List<Pedido> FetchFilter(List<Pedido> pedidos, String fecha)
         {
             //thisDate1.ToString("MM/dd/yyyy") + ".");
             var pedidosFiltro = pedidos.flatMap(pedido => 
                 pedido.Fecha.ToString("dd/MM/yyyy").Equals(fecha)
                 );
             return pedidosFiltro;
-        }
+        }*/
     }
 }

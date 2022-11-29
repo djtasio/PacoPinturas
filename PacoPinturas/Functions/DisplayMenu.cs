@@ -27,6 +27,7 @@ namespace PacoPinturas.Functions
             initialMenu.AppendLine("1- HACER PEDIDO DE MATERIAL");
             initialMenu.AppendLine("2- VER INVENTARIO PERSONAL");
             initialMenu.AppendLine("3- VER COLORES DISPONIBLES");
+            initialMenu.AppendLine("4- CERRAR SESIÓN");
 
             return initialMenu.ToString();
         }

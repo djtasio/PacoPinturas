@@ -18,7 +18,7 @@ namespace PacoPinturas
 
             do
             {
-                int number = Metodos.CheckNumber(DisplayMenu.Initial());
+                int number = Metodos.CheckNumber(DisplayMenu.Initial(), 2);
                 switch (number)
                 {
                     case 1:
@@ -33,6 +33,7 @@ namespace PacoPinturas
                         catch(IncorrectUserException e)
                         {
                             Console.WriteLine(e.Message);
+                            Metodos.Olog.Add(e.Message);
                         }
                         break;
                     case 2:
@@ -43,9 +44,6 @@ namespace PacoPinturas
                         DisplayInteractiveMenu.InitialMenu(usuario);
                         break;
                         //metodo
-                    default:
-                        Console.WriteLine("Has introducido otro número");
-                        break;
                 }
             } while (true);
         }
